@@ -753,7 +753,7 @@ html.anim .rv.in{ opacity:1; transform:none; animation:none; }
 .logo-img{ display:inline-block; background:var(--logo) no-repeat center/contain; vertical-align:middle; }
 #pre .logo-img{ height:82px; width:69px; opacity:.9; }
 .brand .logo-img{ height:40px; width:34px; flex:none; }
-.crest.logo-img{ height:clamp(66px,9vw,104px); width:clamp(56px,7.6vw,88px); margin-bottom:26px; display:block; }
+.crest.logo-img{ height:clamp(66px,9vw,104px); width:clamp(56px,7.6vw,88px); margin-bottom:2px; display:block; }
 .foot .logo-img{ height:58px; width:49px; }
 
 /* Mumbai Deco skyline — line drawing after Eros, Liberty and the Marine Drive blocks */
@@ -1075,6 +1075,73 @@ body{overflow-x:hidden;}
   .foot .logo-img{width:176px;height:56px;}
 }
 
+
+/* ================================================================
+   FINAL ALIGNMENT FIX
+   1. Mobile hero: remove the forced full-viewport centering gap.
+   2. Reviews: use fixed horizontal columns so the cards stay evenly
+      spaced instead of leaving a large visual gap between cards.
+   ================================================================ */
+
+@media (min-width:1101px){
+  #tRail{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:calc((100% - 48px) / 3);
+    grid-template-rows:1fr;
+    column-gap:24px;
+    row-gap:0;
+    overflow-x:auto;
+    overflow-y:hidden;
+    align-items:stretch;
+  }
+
+  #tRail > .tstm{
+    width:auto;
+    min-width:0;
+    flex:none;
+  }
+}
+
+@media (max-width:1100px) and (min-width:601px){
+  #tRail{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:calc((100% - 24px) / 2);
+    grid-template-rows:1fr;
+    column-gap:24px;
+    row-gap:0;
+    overflow-x:auto;
+    overflow-y:hidden;
+    align-items:stretch;
+  }
+
+  #tRail > .tstm{
+    width:auto;
+    min-width:0;
+    flex:none;
+  }
+}
+
+@media (max-width:600px){
+  .hero-stage{
+    min-height:auto !important;
+    justify-content:flex-start !important;
+    padding:38px 0 40px !important;
+  }
+
+  #tRail{
+    display:flex;
+    gap:10px;
+  }
+
+  #tRail > .tstm{
+    flex:0 0 calc(100vw - 58px);
+    width:calc(100vw - 58px);
+    max-width:340px;
+  }
+}
+
 </style>
 </head>
 
@@ -1122,7 +1189,7 @@ body{overflow-x:hidden;}
   <div class="wrap">
     <div class="hero-stage">
       <div class="crest-frame rv"><span class="wing"></span><span class="crest logo-img" aria-hidden="true"></span><span class="wing down"></span></div>
-      <p class="label rv">Independent property advisory &nbsp;·&nbsp; Mumbai &amp; MMR</p>
+      <p class="label rv" style="margin-top: 28px;">Independent property advisory &nbsp;·&nbsp; Mumbai &amp; MMR</p>
       <h1 class="rv">Because your Real Estate goals <em>matter more</em> than our Brand Name</h1>
       <p class="lede rv">Independent advisory across Mumbai. Six checks before you commit — and a specialist desk for buyers abroad.</p>
       <div class="hero-cta rv">
