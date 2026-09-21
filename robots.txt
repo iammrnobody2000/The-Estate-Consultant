@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://the-estate-consultant.netlify.app/sitemap.xml
