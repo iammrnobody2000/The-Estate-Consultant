@@ -1193,6 +1193,54 @@ body{overflow-x:hidden;}
   }
 }
 
+
+/* MOBILE HERO CORRECTION — keep the enlarged marks, remove the excessive whitespace. */
+@media (max-width:600px){
+  .hero{padding-top:0 !important;}
+  .hero-stage{
+    min-height:auto !important;
+    justify-content:flex-start !important;
+    padding:12px 0 34px !important;
+  }
+  .hero-stage .crest.logo-img{
+    width:112px !important;
+    height:112px !important;
+    margin-bottom:0 !important;
+  }
+  .crest-frame .wing{
+    width:185px !important;
+    height:25px !important;
+  }
+  .hero-stage > .label{
+    margin-top:14px !important;
+  }
+  .hero-stage h1{
+    margin-top:14px !important;
+  }
+  .hero-stage .lede{
+    margin-top:18px !important;
+  }
+}
+
+
+/* DESKTOP CREST CORRECTION — keep the mobile sizing untouched. */
+@media (min-width:601px){
+  .hero-stage .crest.logo-img{
+    width:118px !important;
+    height:128px !important;
+    margin-bottom:2px !important;
+  }
+  .crest-frame .wing{
+    width:200px !important;
+    height:25px !important;
+  }
+
+  /* Desktop hero headline: widen the text block so it resolves to 3 lines.
+     Mobile sizing/wrapping is intentionally left untouched. */
+  .hero-stage h1{
+    max-width:28ch !important;
+  }
+}
 </style>
 <!-- Local business structured data -->
 <script type="application/ld+json">
@@ -1262,7 +1310,7 @@ body{overflow-x:hidden;}
       <a href="#testimonials">Clients</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="https://wa.me/919766555558?text=I+am+interested" class="btn btn-solid">Book a consultation</a>
+    <a href="https://wa.me/919766555558?text=Hi%2C%20I%20was%20checking%20your%20website.%20Need%20to%20discuss%20a%20few%20things." class="btn btn-solid">Book a consultation</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
 </nav>
@@ -1275,7 +1323,7 @@ body{overflow-x:hidden;}
       <h1 class="rv">Because your Real Estate goals <em>matter more</em> than our Brand Name</h1>
       <p class="lede rv">Independent advisory across Mumbai. Six checks before you commit — and a specialist desk for buyers abroad.</p>
       <div class="hero-cta rv">
-        <a href="https://wa.me/919766555558?text=I+am+interested" class="btn btn-solid">Book a consultation →</a>
+        <a href="https://wa.me/919766555558?text=Hi%2C%20I%20was%20checking%20your%20website.%20Need%20to%20discuss%20a%20few%20things." class="btn btn-solid">Book a consultation →</a>
         <a href="#manifesto" class="btn btn-ghost">Read the manifesto</a>
       </div>
       <p class="kicker rv">MahaRERA A011172603507 &nbsp;·&nbsp; 3rd floor, Birla Centurion, Worli</p>
