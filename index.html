@@ -772,7 +772,7 @@ html.anim .rv.in{ opacity:1; transform:none; animation:none; }
 
 @media (max-width:900px){
   .about-grid{ grid-template-columns:1fr; }
-  .portrait{ max-width:250px; margin:0 auto; }
+  .portrait{ max-width:250px; margin:0 auto !important; }
 }
 
 /* ==================================================================
@@ -1241,6 +1241,51 @@ body{overflow-x:hidden;}
     max-width:28ch !important;
   }
 }
+
+/* FINAL CLIENT LAYOUT — ABOUT SECTION MARK */
+#about > .wrap > .fan{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+#about > .wrap > .about-section-label{
+  width:100% !important;
+  text-align:center !important;
+}
+
+/* FINAL CLIENT LAYOUT — FOUNDER PROFILE */
+.about-grid{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:32px !important;
+  margin-top:44px !important;
+}
+.about-grid .portrait{
+  width:min(300px, 72vw) !important;
+  max-width:300px !important;
+  margin:0 auto !important;
+  order:1;
+}
+.about-grid .about-copy{
+  width:100% !important;
+  max-width:900px !important;
+  margin:0 auto !important;
+  text-align:center !important;
+  order:2;
+}
+.about-grid .about-copy .trule{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.about-grid .about-copy p{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.about-grid .about-name,
+.about-grid .about-role{
+  text-align:center !important;
+}
+
 </style>
 <!-- Local business structured data -->
 <script type="application/ld+json">
@@ -1265,6 +1310,53 @@ body{overflow-x:hidden;}
   "telephone": "+91-9766555558"
 }
 </script>
+
+<style id="final-about-center-fix">
+/* FINAL ABOUT SECTION LAYOUT
+   Founder portrait first, then all founder text centered. */
+.about-grid{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:30px !important;
+  margin-top:44px !important;
+}
+.about-grid .portrait{
+  width:min(300px,100%) !important;
+  max-width:300px !important;
+  margin:0 auto !important;
+  text-align:center !important;
+}
+.about-grid .about-copy{
+  width:100% !important;
+  max-width:900px !important;
+  margin:0 auto !important;
+  text-align:center !important;
+}
+.about-grid .about-copy .about-name,
+.about-grid .about-copy .about-role,
+.about-grid .about-copy p,
+.about-grid .about-copy .trule{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.about-grid .about-copy p{
+  max-width:900px !important;
+}
+.about-grid .about-copy .trule{
+  width:min(275px,70%) !important;
+}
+.about-grid .chips{
+  justify-content:center !important;
+  align-items:center !important;
+}
+@media (max-width:900px){
+  .about-grid{gap:24px !important;}
+  .about-grid .portrait{max-width:250px !important;}
+  .about-grid .about-copy{max-width:94vw !important;}
+}
+</style>
 </head>
 
 <!-- LOCAL IMAGE ASSETS
@@ -1336,7 +1428,7 @@ body{overflow-x:hidden;}
 
     <div class="strip rv">
       <div><div class="k">Coverage</div><div class="v">All of Mumbai</div><div class="n">Plus Navi Mumbai &amp; Thane</div></div>
-      <div><div class="k">What we handle</div><div class="v">Residential · Commercial · Retail</div><div class="n">Individually owned properties</div></div>
+      <div><div class="k">What we handle</div><div class="v">Residential · Commercial · Retail</div></div>
       <div><div class="k">Checks before you commit</div><div class="v">Six</div><div class="n">Or we tell you to walk</div></div>
       <div><div class="k">Desk hours</div><div class="v">06:00–23:00</div><div class="n">IST, for overseas clients</div></div>
     </div>
@@ -1374,8 +1466,8 @@ body{overflow-x:hidden;}
 <!-- ===== ABOUT ===== -->
 <section class="sec sec-blue emboss" id="about">
   <div class="wrap">
-    <span class="fan rv"></span>
-    <p class="label rv">About us</p>
+    <span class="fan fan-c rv"></span>
+    <p class="label rv about-section-label">About us</p>
     <div class="about-grid">
       <figure class="portrait rv" style="margin:0">
         <div class="steps"><div class="frame p-founder" role="img" aria-label="Portrait of Akshay Lunawat, Founder and Business Director"></div></div>
@@ -1460,7 +1552,8 @@ body{overflow-x:hidden;}
           <p class="who">For non-resident Indians in the Gulf, US, UK, Singapore and beyond</p>
           <p>Everything above, plus what you cannot do from four thousand kilometres away.</p>
           <ul class="ticks">
-                        <li>FEMA-clean routing via NRE, NRO or FCNR</li>
+            <li>Site visits filmed, sent the same day</li>
+            <li>FEMA-clean routing via NRE, NRO or FCNR</li>
             <li>Power of Attorney drafted and adjudicated</li>
             <li>Lower Deduction Certificate before you sign</li>
             <li>Repatriation and full exit management</li>
@@ -1838,7 +1931,7 @@ body{overflow-x:hidden;}
      ['Title search and thirty-year encumbrance certificate','Chain of ownership and any pending succession claims','Society formation, conveyance and deemed conveyance status','Draft agreement reviewed clause by clause before you sign anything']],
     ['Financial aspects','The full cost, not the headline price \u2014 and where the headline price is inflated.',
      ['Agreement value against ready reckoner and recent registered transactions','All-in cost: stamp duty, GST, registration, floor rise, parking, club, maintenance','Payment plan tested against construction stage and funding timing','Realistic rental yield and exit liquidity for that specific configuration']],
-    ['Physical verification','Someone from this office stands in the flat. On camera. With a tape measure.',
+    ['Physical verification','Someone from this office stands in the flat. On camera. (pre-owned properties)',
      ['Site visit filmed end to end \u2014 essential if you cannot attend yourself','Carpet area measured against what the agreement states','Construction quality and stage checked against the claimed timeline','Views, noise, light and the neighbours nobody mentions in the brochure']]
   ];
   var rcList=$id('rcList'),rcCount=$id('rcCount'),opened={};
