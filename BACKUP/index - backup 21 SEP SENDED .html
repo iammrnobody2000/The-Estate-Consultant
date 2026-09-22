@@ -37,6 +37,8 @@
 <meta name="geo.placename" content="Mumbai, Maharashtra, India">
 <meta name="language" content="English">
 
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Independent real estate advisory across Mumbai and the MMR. We verify before you buy. Specialist desks for resident and non-resident Indian buyers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
@@ -181,7 +183,7 @@ h1 em,h2 em,.statement p em,.soon h2 em{ font-weight:700; }
       backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--rule); }
 .nav-in{ display:flex; align-items:center; justify-content:space-between; gap:20px; height:74px; }
 .brand{ display:flex; align-items:center; gap:11px; min-width:0; }
-.brand img{ height:48px; width:auto; }
+.brand img{ height:40px; width:auto; }
 .brand-name{ font-family:var(--display); font-size:15px; font-weight:700; line-height:1.05; color:var(--ink); }
 .brand-name span{ display:block; }
 .nav-links{ display:flex; gap:4px; align-items:center; }
@@ -268,7 +270,7 @@ html.loaded #pre{ opacity:0; visibility:hidden; pointer-events:none; animation:n
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   text-align:center; padding:clamp(40px,7vh,80px) 0 clamp(30px,5vh,54px);
 }
-.hero-stage .crest{ height:clamp(82px,10.5vw,128px); margin-bottom:30px; }
+.hero-stage .crest{ height:clamp(66px,9vw,104px); margin-bottom:26px; }
 .hero-stage h1{
   font-size:clamp(27px,4.9vw,64px); line-height:1.2; letter-spacing:-.035em;
   margin:20px auto 0; max-width:21ch;
@@ -370,7 +372,7 @@ html.mf-live .mf-panel.on{ opacity:1; }
 
 /* -- Deco frame for the crest -- */
 .crest-frame{ display:inline-flex; flex-direction:column; align-items:center; }
-.crest-frame .wing{ width:175px; height:24px;
+.crest-frame .wing{ width:150px; height:22px;
   background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMjQiIHdpZHRoPSIzMjAiIGhlaWdodD0iNDgiPjxyZWN0IHg9IjU2IiB5PSIxIiB3aWR0aD0iNDgiIGhlaWdodD0iMi40IiBmaWxsPSIjOEE2MDIzIi8+PHJlY3QgeD0iMzQiIHk9IjgiIHdpZHRoPSI5MiIgaGVpZ2h0PSIyLjQiIGZpbGw9IiM4QTYwMjMiLz48cmVjdCB4PSIxMiIgeT0iMTUiIHdpZHRoPSIxMzYiIGhlaWdodD0iMi40IiBmaWxsPSIjOEE2MDIzIi8+PHJlY3QgeD0iMCIgeT0iMjEiIHdpZHRoPSIxNjAiIGhlaWdodD0iMSIgZmlsbD0iIzhBNjAyMyIvPjwvc3ZnPg==) no-repeat center/contain; opacity:.85; }
 .crest-frame .wing.down{ transform:rotate(180deg); }
 
@@ -435,9 +437,6 @@ html.mf-live .mf-panel.on{ opacity:1; }
 .chapter .sub{ font-family:var(--mono); font-size:12px; letter-spacing:.06em;
   color:var(--ink-3); margin:16px auto 0; max-width:48ch; }
 .chapter .zig{ margin:22px auto 0; max-width:400px; }
-.who-we-are{ text-align:center; }
-.who-we-are .wrap{ display:flex; flex-direction:column; align-items:center; }
-.who-we-are .sub{ text-align:center; }
 
 /* ==================================================================
    NEWLY LAUNCHED
@@ -1002,18 +1001,10 @@ body{overflow-x:hidden;}
 /* The service rail gets a controlled preview of the next card on phones. */
 @media (max-width:600px){
   :root{--gut:18px;}
-  .nav-in{height:72px;}
-  .nav-links{inset:72px 0 auto 0;padding:8px var(--gut) 18px;}
-
-  /* Client requested the first/header logo to be visibly larger on mobile. */
-  .brand img{height:56px; width:auto;}
+  .nav-in{height:66px;}
+  .nav-links{inset:66px 0 auto 0;padding:8px var(--gut) 18px;}
+  .brand img{height:34px;}
   .brand-name{font-size:14px;}
-
-  /* Client requested the main centred crest/logo to be bigger on mobile too.
-     The source PNG has transparent padding, so the CSS height needs to be
-     larger than the apparent mark. */
-  .hero-stage .crest{height:clamp(126px,31vw,145px); margin-bottom:26px;}
-  .crest-frame .wing{width:185px; height:25px;}
 
   .hero{padding-top:34px;}
   .hero h1{font-size:clamp(30px,9vw,42px);}
@@ -1194,29 +1185,6 @@ body{overflow-x:hidden;}
 }
 
 </style>
-<!-- Local business structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "Your Estate Consultant",
-  "url": "https://the-estate-consultant.netlify.app/",
-  "logo": "https://the-estate-consultant.netlify.app/logo.png",
-  "image": "https://the-estate-consultant.netlify.app/meta-image.jpg",
-  "description": "Independent real estate advisory across Mumbai and the MMR. We verify before you buy. Specialist desks for resident and non-resident Indian buyers.",
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Mumbai"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Mumbai Metropolitan Region"
-    }
-  ],
-  "telephone": "+91-9766555558"
-}
-</script>
 </head>
 
 <!-- LOCAL IMAGE ASSETS
@@ -1288,7 +1256,7 @@ body{overflow-x:hidden;}
 
     <div class="strip rv">
       <div><div class="k">Coverage</div><div class="v">All of Mumbai</div><div class="n">Plus Navi Mumbai &amp; Thane</div></div>
-      <div><div class="k">What we handle</div><div class="v">Residential · Commercial · Retail</div><div class="n">Individually owned properties</div></div>
+      <div><div class="k">What we handle</div><div class="v">Buy · Sell · Rent</div><div class="n">Primary, resale &amp; rental</div></div>
       <div><div class="k">Checks before you commit</div><div class="v">Six</div><div class="n">Or we tell you to walk</div></div>
       <div><div class="k">Desk hours</div><div class="v">06:00–23:00</div><div class="n">IST, for overseas clients</div></div>
     </div>
@@ -1371,7 +1339,7 @@ body{overflow-x:hidden;}
     <div class="mf-panels" id="mfPanels">
       <div class="mf-panel on"><span class="n">01</span><p class="big">You are shown a render.</p><p class="sub">The brochure is not a contract.</p></div>
       <div class="mf-panel"><span class="n">02</span><p class="big">The title is thirty years long.</p><p class="sub">The problems that surface in year five were visible on day one.</p></div>
-      <div class="mf-panel"><span class="n">03</span><p class="big">Most advice in the room leans toward yes.</p><p class="sub">Everyone around the deal wants it closed. Few are asking whether it should be.</p></div>
+      <div class="mf-panel"><span class="n">03</span><p class="big">Everyone in the room is paid on completion.</p><p class="sub">Every voice advising you earns more if you sign.</p></div>
       <div class="mf-panel"><span class="n">04</span><p class="big">Price is not what the portal says.</p><p class="sub">Asking prices are marketing. Registered transactions are fact.</p></div>
       <div class="mf-panel"><span class="n">05</span><p class="big">From abroad it is harder still.</p><p class="sub">You cannot walk the site. The tax treatment is different.</p></div>
       <div class="mf-panel"><span class="n">06</span><p class="big">So we check first, and we say no.</p><p class="sub">Six checks on every property. We walk when one fails.</p></div>
@@ -1412,7 +1380,8 @@ body{overflow-x:hidden;}
           <p class="who">For non-resident Indians in the Gulf, US, UK, Singapore and beyond</p>
           <p>Everything above, plus what you cannot do from four thousand kilometres away.</p>
           <ul class="ticks">
-                        <li>FEMA-clean routing via NRE, NRO or FCNR</li>
+            <li>Site visits filmed, sent the same day</li>
+            <li>FEMA-clean routing via NRE, NRO or FCNR</li>
             <li>Power of Attorney drafted and adjudicated</li>
             <li>Lower Deduction Certificate before you sign</li>
             <li>Repatriation and full exit management</li>
