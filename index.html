@@ -143,13 +143,16 @@ h1 em,h2 em,.statement p em,.soon h2 em{ font-weight:700; }
   border:0 !important;
 }
 
+.hero-video-card .veil{
+  background:transparent !important;
+}
+
 
 .ph img{ width:100%; height:100%; object-fit:cover; position:relative; z-index:1;
          filter:brightness(1.06) saturate(.88) contrast(.98); }
 /* Real photography gets a lighter hand — enough to sit with the palette,
    not so much that a night shot goes flat. */
-.ph--real img{ filter:saturate(.94) contrast(1.03) brightness(1.02); }
-/*.ph--real .veil{ background:rgba(255,255,255,.05); }*/
+/*.ph--real img{ filter:saturate(.94) contrast(1.03) brightness(1.02); }*/
 .ph--real{ background-size:cover; background-position:center; }
 .pos-l{ background-position:left center; }
 .pos-r{ background-position:right center; }
@@ -167,7 +170,7 @@ h1 em,h2 em,.statement p em,.soon h2 em{ font-weight:700; }
 .p-board-view{ background-image:url('board-view.jpg'); }
 .p-founder{ background-image:url('founder.jpg'); }
 
-.ph .veil{ position:absolute; inset:0; z-index:2; pointer-events:none; background:rgba(255,255,255,.10); }
+.ph .veil{ position:absolute; inset:0; z-index:2; pointer-events:none; background:transparent; }
 .cap{ padding-top:10px; font-family:var(--mono); font-size:10.5px; letter-spacing:.13em;
       text-transform:uppercase; color:var(--ink-3); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
 
