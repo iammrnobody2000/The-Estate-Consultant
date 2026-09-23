@@ -37,8 +37,6 @@
 <meta name="geo.placename" content="Mumbai, Maharashtra, India">
 <meta name="language" content="English">
 
-<link rel="icon" type="image/png" href="favicon.png">
-<meta name="description" content="Independent real estate advisory across Mumbai and the MMR. We verify before you buy. Specialist desks for resident and non-resident Indian buyers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
@@ -140,12 +138,6 @@ h1 em,h2 em,.statement p em,.soon h2 em{ font-weight:700; }
   border:1px solid var(--rule); border-radius:var(--r);
   background-size:cover; background-position:center; background-repeat:no-repeat;
 }
-
-.hero-video-card{
-  border:0 !important;
-}
-
-
 .ph img{ width:100%; height:100%; object-fit:cover; position:relative; z-index:1;
          filter:brightness(1.06) saturate(.88) contrast(.98); }
 /* Real photography gets a lighter hand — enough to sit with the palette,
@@ -189,7 +181,7 @@ h1 em,h2 em,.statement p em,.soon h2 em{ font-weight:700; }
       backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--rule); }
 .nav-in{ display:flex; align-items:center; justify-content:space-between; gap:20px; height:74px; }
 .brand{ display:flex; align-items:center; gap:11px; min-width:0; }
-.brand img{ height:40px; width:auto; }
+.brand img{ height:48px; width:auto; }
 .brand-name{ font-family:var(--display); font-size:15px; font-weight:700; line-height:1.05; color:var(--ink); }
 .brand-name span{ display:block; }
 .nav-links{ display:flex; gap:4px; align-items:center; }
@@ -276,7 +268,7 @@ html.loaded #pre{ opacity:0; visibility:hidden; pointer-events:none; animation:n
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   text-align:center; padding:clamp(40px,7vh,80px) 0 clamp(30px,5vh,54px);
 }
-.hero-stage .crest{ height:clamp(66px,9vw,104px); margin-bottom:26px; }
+.hero-stage .crest{ height:clamp(82px,10.5vw,128px); margin-bottom:30px; }
 .hero-stage h1{
   font-size:clamp(27px,4.9vw,64px); line-height:1.2; letter-spacing:-.035em;
   margin:20px auto 0; max-width:21ch;
@@ -378,7 +370,7 @@ html.mf-live .mf-panel.on{ opacity:1; }
 
 /* -- Deco frame for the crest -- */
 .crest-frame{ display:inline-flex; flex-direction:column; align-items:center; }
-.crest-frame .wing{ width:150px; height:22px;
+.crest-frame .wing{ width:175px; height:24px;
   background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMjQiIHdpZHRoPSIzMjAiIGhlaWdodD0iNDgiPjxyZWN0IHg9IjU2IiB5PSIxIiB3aWR0aD0iNDgiIGhlaWdodD0iMi40IiBmaWxsPSIjOEE2MDIzIi8+PHJlY3QgeD0iMzQiIHk9IjgiIHdpZHRoPSI5MiIgaGVpZ2h0PSIyLjQiIGZpbGw9IiM4QTYwMjMiLz48cmVjdCB4PSIxMiIgeT0iMTUiIHdpZHRoPSIxMzYiIGhlaWdodD0iMi40IiBmaWxsPSIjOEE2MDIzIi8+PHJlY3QgeD0iMCIgeT0iMjEiIHdpZHRoPSIxNjAiIGhlaWdodD0iMSIgZmlsbD0iIzhBNjAyMyIvPjwvc3ZnPg==) no-repeat center/contain; opacity:.85; }
 .crest-frame .wing.down{ transform:rotate(180deg); }
 
@@ -443,6 +435,9 @@ html.mf-live .mf-panel.on{ opacity:1; }
 .chapter .sub{ font-family:var(--mono); font-size:12px; letter-spacing:.06em;
   color:var(--ink-3); margin:16px auto 0; max-width:48ch; }
 .chapter .zig{ margin:22px auto 0; max-width:400px; }
+.who-we-are{ text-align:center; }
+.who-we-are .wrap{ display:flex; flex-direction:column; align-items:center; }
+.who-we-are .sub{ text-align:center; }
 
 /* ==================================================================
    NEWLY LAUNCHED
@@ -777,7 +772,7 @@ html.anim .rv.in{ opacity:1; transform:none; animation:none; }
 
 @media (max-width:900px){
   .about-grid{ grid-template-columns:1fr; }
-  .portrait{ max-width:250px; margin:0 auto; }
+  .portrait{ max-width:250px; margin:0 auto !important; }
 }
 
 /* ==================================================================
@@ -1007,10 +1002,18 @@ body{overflow-x:hidden;}
 /* The service rail gets a controlled preview of the next card on phones. */
 @media (max-width:600px){
   :root{--gut:18px;}
-  .nav-in{height:66px;}
-  .nav-links{inset:66px 0 auto 0;padding:8px var(--gut) 18px;}
-  .brand img{height:34px;}
+  .nav-in{height:72px;}
+  .nav-links{inset:72px 0 auto 0;padding:8px var(--gut) 18px;}
+
+  /* Client requested the first/header logo to be visibly larger on mobile. */
+  .brand img{height:56px; width:auto;}
   .brand-name{font-size:14px;}
+
+  /* Client requested the main centred crest/logo to be bigger on mobile too.
+     The source PNG has transparent padding, so the CSS height needs to be
+     larger than the apparent mark. */
+  .hero-stage .crest{height:clamp(126px,31vw,145px); margin-bottom:26px;}
+  .crest-frame .wing{width:185px; height:25px;}
 
   .hero{padding-top:34px;}
   .hero h1{font-size:clamp(30px,9vw,42px);}
@@ -1191,6 +1194,99 @@ body{overflow-x:hidden;}
 }
 
 
+/* MOBILE HERO CORRECTION — keep the enlarged marks, remove the excessive whitespace. */
+@media (max-width:600px){
+  .hero{padding-top:0 !important;}
+  .hero-stage{
+    min-height:auto !important;
+    justify-content:flex-start !important;
+    padding:12px 0 34px !important;
+  }
+  .hero-stage .crest.logo-img{
+    width:112px !important;
+    height:112px !important;
+    margin-bottom:0 !important;
+  }
+  .crest-frame .wing{
+    width:185px !important;
+    height:25px !important;
+  }
+  .hero-stage > .label{
+    margin-top:14px !important;
+  }
+  .hero-stage h1{
+    margin-top:14px !important;
+  }
+  .hero-stage .lede{
+    margin-top:18px !important;
+  }
+}
+
+
+/* DESKTOP CREST CORRECTION — keep the mobile sizing untouched. */
+@media (min-width:601px){
+  .hero-stage .crest.logo-img{
+    width:118px !important;
+    height:128px !important;
+    margin-bottom:2px !important;
+  }
+  .crest-frame .wing{
+    width:200px !important;
+    height:25px !important;
+  }
+
+  /* Desktop hero headline: widen the text block so it resolves to 3 lines.
+     Mobile sizing/wrapping is intentionally left untouched. */
+  .hero-stage h1{
+    max-width:28ch !important;
+  }
+}
+
+/* FINAL CLIENT LAYOUT — ABOUT SECTION MARK */
+#about > .wrap > .fan{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+#about > .wrap > .about-section-label{
+  width:100% !important;
+  text-align:center !important;
+}
+
+/* FINAL CLIENT LAYOUT — FOUNDER PROFILE */
+.about-grid{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:32px !important;
+  margin-top:44px !important;
+}
+.about-grid .portrait{
+  width:min(300px, 72vw) !important;
+  max-width:300px !important;
+  margin:0 auto !important;
+  order:1;
+}
+.about-grid .about-copy{
+  width:100% !important;
+  max-width:900px !important;
+  margin:0 auto !important;
+  text-align:center !important;
+  order:2;
+}
+.about-grid .about-copy .trule{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.about-grid .about-copy p{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.about-grid .about-name,
+.about-grid .about-role{
+  text-align:center !important;
+}
+
+
 /* ---------- HERO VIDEO ---------- */
 .hero-video-card{ overflow:hidden; }
 .hero-video{
@@ -1209,6 +1305,76 @@ body{overflow-x:hidden;}
   .hero-video-fallback{ display:block; }
 }
 
+</style>
+<!-- Local business structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Your Estate Consultant",
+  "url": "https://the-estate-consultant.netlify.app/",
+  "logo": "https://the-estate-consultant.netlify.app/logo.png",
+  "image": "https://the-estate-consultant.netlify.app/meta-image.jpg",
+  "description": "Independent real estate advisory across Mumbai and the MMR. We verify before you buy. Specialist desks for resident and non-resident Indian buyers.",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Mumbai"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Mumbai Metropolitan Region"
+    }
+  ],
+  "telephone": "+91-9766555558"
+}
+</script>
+
+<style id="final-about-center-fix">
+/* FINAL ABOUT SECTION LAYOUT
+   Founder portrait first, then all founder text centered. */
+.about-grid{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:30px !important;
+  margin-top:44px !important;
+}
+.about-grid .portrait{
+  width:min(300px,100%) !important;
+  max-width:300px !important;
+  margin:0 auto !important;
+  text-align:center !important;
+}
+.about-grid .about-copy{
+  width:100% !important;
+  max-width:900px !important;
+  margin:0 auto !important;
+  text-align:center !important;
+}
+.about-grid .about-copy .about-name,
+.about-grid .about-copy .about-role,
+.about-grid .about-copy p,
+.about-grid .about-copy .trule{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.about-grid .about-copy p{
+  max-width:900px !important;
+}
+.about-grid .about-copy .trule{
+  width:min(275px,70%) !important;
+}
+.about-grid .chips{
+  justify-content:center !important;
+  align-items:center !important;
+}
+@media (max-width:900px){
+  .about-grid{gap:24px !important;}
+  .about-grid .portrait{max-width:250px !important;}
+  .about-grid .about-copy{max-width:94vw !important;}
+}
 </style>
 </head>
 
@@ -1255,7 +1421,7 @@ body{overflow-x:hidden;}
       <a href="#testimonials">Clients</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="https://wa.me/919766555558?text=I+am+interested" class="btn btn-solid">Book a consultation</a>
+    <a href="https://wa.me/919766555558?text=Hi%2C%20I%20was%20checking%20your%20website.%20Need%20to%20discuss%20a%20few%20things." class="btn btn-solid">Book a consultation</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
 </nav>
@@ -1268,7 +1434,7 @@ body{overflow-x:hidden;}
       <h1 class="rv">Because your Real Estate goals <em>matter more</em> than our Brand Name</h1>
       <p class="lede rv">Independent advisory across Mumbai. Six checks before you commit — and a specialist desk for buyers abroad.</p>
       <div class="hero-cta rv">
-        <a href="https://wa.me/919766555558?text=I+am+interested" class="btn btn-solid">Book a consultation →</a>
+        <a href="https://wa.me/919766555558?text=Hi%2C%20I%20was%20checking%20your%20website.%20Need%20to%20discuss%20a%20few%20things." class="btn btn-solid">Book a consultation →</a>
         <a href="#manifesto" class="btn btn-ghost">Read the manifesto</a>
       </div>
       <p class="kicker rv">MahaRERA A011172603507 &nbsp;·&nbsp; 3rd floor, Birla Centurion, Worli</p>
@@ -1287,7 +1453,7 @@ body{overflow-x:hidden;}
 
     <div class="strip rv">
       <div><div class="k">Coverage</div><div class="v">All of Mumbai</div><div class="n">Plus Navi Mumbai &amp; Thane</div></div>
-      <div><div class="k">What we handle</div><div class="v">Buy · Sell · Rent</div><div class="n">Primary, resale &amp; rental</div></div>
+      <div><div class="k">What we handle</div><div class="v">Residential · Commercial · Retail</div></div>
       <div><div class="k">Checks before you commit</div><div class="v">Six</div><div class="n">Or we tell you to walk</div></div>
       <div><div class="k">Desk hours</div><div class="v">06:00–23:00</div><div class="n">IST, for overseas clients</div></div>
     </div>
@@ -1325,8 +1491,8 @@ body{overflow-x:hidden;}
 <!-- ===== ABOUT ===== -->
 <section class="sec sec-blue emboss" id="about">
   <div class="wrap">
-    <span class="fan rv"></span>
-    <p class="label rv">About us</p>
+    <span class="fan fan-c rv"></span>
+    <p class="label rv about-section-label">About us</p>
     <div class="about-grid">
       <figure class="portrait rv" style="margin:0">
         <div class="steps"><div class="frame p-founder" role="img" aria-label="Portrait of Akshay Lunawat, Founder and Business Director"></div></div>
@@ -1343,7 +1509,7 @@ body{overflow-x:hidden;}
         <div class="chips rv">
           <span class="chip">10+ years in Mumbai real estate</span>
           <span class="chip">Ultra-HNI sales</span>
-          <span class="chip">South Mumbai &middot; Bandra &middot; Juhu </span>
+          <span class="chip">South Mumbai &middot; Bandra &middot; Juhu</span>
         </div>
       </div>
     </div>
@@ -1370,7 +1536,7 @@ body{overflow-x:hidden;}
     <div class="mf-panels" id="mfPanels">
       <div class="mf-panel on"><span class="n">01</span><p class="big">You are shown a render.</p><p class="sub">The brochure is not a contract.</p></div>
       <div class="mf-panel"><span class="n">02</span><p class="big">The title is thirty years long.</p><p class="sub">The problems that surface in year five were visible on day one.</p></div>
-      <div class="mf-panel"><span class="n">03</span><p class="big">Everyone in the room is paid on completion.</p><p class="sub">Every voice advising you earns more if you sign.</p></div>
+      <div class="mf-panel"><span class="n">03</span><p class="big">Most advice in the room leans toward yes.</p><p class="sub">Everyone around the deal wants it closed. Few are asking whether it should be.</p></div>
       <div class="mf-panel"><span class="n">04</span><p class="big">Price is not what the portal says.</p><p class="sub">Asking prices are marketing. Registered transactions are fact.</p></div>
       <div class="mf-panel"><span class="n">05</span><p class="big">From abroad it is harder still.</p><p class="sub">You cannot walk the site. The tax treatment is different.</p></div>
       <div class="mf-panel"><span class="n">06</span><p class="big">So we check first, and we say no.</p><p class="sub">Six checks on every property. We walk when one fails.</p></div>
@@ -1449,7 +1615,7 @@ body{overflow-x:hidden;}
       </div>
     </div>
     <div class="railwrap rv"><div class="rail" id="svcRail">
-      <div class="svc"><div class="svc-top"><span class="svc-num">01</span><span class="pill both">Everyone</span></div><h3>Independent shortlisting</h3><p>Every option comes with the reason we would rule it out.</p></div>
+      <div class="svc"><div class="svc-top"><span class="svc-num">01</span><span class="pill both">Everyone</span></div><h3>Independent shortlisting</h3><p>Units shared with you are based on your breif. Everything that exists is not sent to you mindlessly.</p></div>
       <div class="svc"><div class="svc-top"><span class="svc-num">02</span><span class="pill both">Everyone</span></div><h3>Realty Check diligence</h3><p>Approvals, builder record, infrastructure, title, cost and a physical inspection.</p></div>
       <div class="svc"><div class="svc-top"><span class="svc-num">03</span><span class="pill both">Everyone</span></div><h3>Valuation &amp; benchmarking</h3><p>Worth measured against registered transactions, not portal listings.</p></div>
       <div class="svc"><div class="svc-top"><span class="svc-num">04</span><span class="pill both">Everyone</span></div><h3>Home loan arrangement</h3><p>Sanction structuring across major lenders, sized to your real horizon.</p></div>
@@ -1790,7 +1956,7 @@ body{overflow-x:hidden;}
      ['Title search and thirty-year encumbrance certificate','Chain of ownership and any pending succession claims','Society formation, conveyance and deemed conveyance status','Draft agreement reviewed clause by clause before you sign anything']],
     ['Financial aspects','The full cost, not the headline price \u2014 and where the headline price is inflated.',
      ['Agreement value against ready reckoner and recent registered transactions','All-in cost: stamp duty, GST, registration, floor rise, parking, club, maintenance','Payment plan tested against construction stage and funding timing','Realistic rental yield and exit liquidity for that specific configuration']],
-    ['Physical verification','Someone from this office stands in the flat. On camera. With a tape measure.',
+    ['Physical verification','Someone from this office stands in the flat. On camera. </br>(pre-owned properties)',
      ['Site visit filmed end to end \u2014 essential if you cannot attend yourself','Carpet area measured against what the agreement states','Construction quality and stage checked against the claimed timeline','Views, noise, light and the neighbours nobody mentions in the brochure']]
   ];
   var rcList=$id('rcList'),rcCount=$id('rcCount'),opened={};
